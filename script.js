@@ -1,10 +1,10 @@
-// Exercise 1
-//  Part 1
+// ====== Exercise 1 ======
+// ===== Part 1
 const categories = document.querySelectorAll('ul#categories li.item');
 const numberOfCategories = categories.length;
 
-//  Part 2
-// Category names
+// ===== Part 2
+// == Category names
 const categoryName = document.querySelectorAll('ul#categories li.item h2');
 const arrayOfCategoryNames = [];
 
@@ -14,25 +14,44 @@ categoryName.forEach((el) => arrayOfCategoryNames.push(el.textContent));
 //   arrayOfCategoryNames.push(x.textContent);
 // }
 
-// Category size
+// == Category size
 const categoryElements = document.querySelectorAll('ul#categories li.item ul');
 const arrayOfCategorySize = [...categoryElements].map(
 	(element) => element.children.length
 );
 
-// Message functions:
+// // ===== Message functions:
 
-function messageCategoriesElements() {
-	let _name = arrayOfCategoryNames;
-	let _size = arrayOfCategorySize;
-	for (let i = 0; i < arrayOfCategoryNames.length; i++) {
-		_name = arrayOfCategoryNames[i];
-		_size = arrayOfCategorySize[i];
-		console.log(`Category: ${_name} \nElements: ${_size}`);
-	}
-}
+// function messageCategoriesElements() {
+// 	let _name = arrayOfCategoryNames;
+// 	let _size = arrayOfCategorySize;
+// 	for (let i = 0; i < arrayOfCategoryNames.length; i++) {
+// 		_name = arrayOfCategoryNames[i];
+// 		_size = arrayOfCategorySize[i];
+// 		console.log(`Category: ${_name} \nElements: ${_size}`);
+// 	}
+// }
 
-const messageTotalCategories = () =>
-	`Number of categoires: ${numberOfCategories}`;
-console.log(messageTotalCategories());
-messageCategoriesElements();
+// const messageTotalCategories = () =>
+// 	`Number of categoires: ${numberOfCategories}`;
+// console.log(messageTotalCategories());
+// messageCategoriesElements();
+
+// ====== Exercise 2 ======
+// Provided Array:
+const ingredients = [
+	'Potatoes',
+	'Mushrooms',
+	'Garlic',
+	'Tomatos',
+	'Herbs',
+	'Condiments',
+];
+
+const list = document.querySelector('#ingredients');
+ingredients.forEach((igredient) => {
+	const listElement = document.createElement('li');
+	listElement.classList.add('item');
+	listElement.textContent = igredient;
+	list.appendChild(listElement);
+});
