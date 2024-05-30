@@ -32,9 +32,7 @@ function messageCategoriesElements() {
 	}
 }
 
-const messageTotalCategories = () => {
+const messageTotalCategories = () =>
 	`Number of categoires: ${numberOfCategories}`;
-};
-
 console.log(messageTotalCategories());
 messageCategoriesElements();
