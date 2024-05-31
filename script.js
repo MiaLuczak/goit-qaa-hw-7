@@ -82,6 +82,12 @@ images.forEach(({ url, alt }) => {
 	}
 	galleryList.insertAdjacentHTML(
 		'beforeend',
-		`<img src="${src}" alt="${alt}">`
+		`<img src="${src}" alt="${alt}" class="image">`
 	);
 });
+
+galleryList.style =
+	'display: flex; justify-content: space-around; flex-flow: row wrap;';
+
+const image = document.querySelectorAll('.image');
+image.forEach((element) => (element.style = 'max-width: 33%; height: auto;'));
