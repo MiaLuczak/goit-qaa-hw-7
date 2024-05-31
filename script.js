@@ -87,7 +87,7 @@ images.forEach(({ url, alt }) => {
 });
 
 galleryList.style =
-	'display: flex; justify-content: space-around; flex-flow: row wrap;';
+	'display: flex; justify-content: space-around; flex-flow: row wrap; padding: 0px';
 
 const image = document.querySelectorAll('.image');
 image.forEach((element) => (element.style = 'max-width: 33%; height: auto;'));
