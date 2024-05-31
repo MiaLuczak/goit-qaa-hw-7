@@ -73,17 +73,15 @@ const images = [
 	},
 ];
 
-// const imageDOMArray = [];
-// images.forEach(({ url: src, alt }) => {
-// 	const imageHTMLElement = document.createElement('img');
-// 	imageHTMLElement.setAttribute('src', src);
-// 	imageDOMArray.push(imageHTMLElement);
-// });
+const galleryList = document.querySelector('.gallery');
 
-images.forEach(({ url: url, alt }) => {
+images.forEach(({ url, alt }) => {
 	let src = '';
 	if (url.startsWith('<') && url.endsWith('>')) {
 		src = url.slice(1, url.length - 1);
 	}
-	console.log(src);
+	galleryList.insertAdjacentHTML(
+		'beforeend',
+		`<img src="${src}" alt="${alt}">`
+	);
 });
